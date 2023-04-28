@@ -1,3 +1,16 @@
+Instalar dependencias
+
+```shell
+npm install
+```
+
+Ejecutar el proyecto con el comando
+```shell
+ng serve
+```
+
+
+
 # TodoList
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.

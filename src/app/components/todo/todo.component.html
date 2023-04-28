@@ -1,0 +1,13 @@
+<li class="list-group-item">
+  <div class="form-check d-inline">
+    <input type="checkbox" class="form-check-input" id="complete" [checked]="todoInput.completed"
+           (change)="onChange(todoInput.id)">
+    <label for="complete" class="form-check-label lead">{{todoInput.description}}</label>
+  </div>
+  <div class="float-right">
+    <span class="mx-3">{{todoInput.date | date: 'yyyy-MM-dd'}}</span>
+    <i class="fa fa-heart mx-3 btn"></i>
+    <button class="edit-button" [routerLink]="['/edit/', todoInput.id]">Editar</button>
+    <button class="delete-button" (click)="deleteTodo(todoInput.id)">Borrar</button>
+  </div>
+</li>

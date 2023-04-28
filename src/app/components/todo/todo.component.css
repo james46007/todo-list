@@ -1,0 +1,31 @@
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.form-check {
+  margin-right: 10px;
+}
+
+.form-check-label {
+  margin-bottom: 0;
+}
+
+.float-right {
+  display: flex;
+  align-items: center;
+}
+
+.mx-3 {
+  margin: 0 3px;
+}
+
+.btn {
+  cursor: pointer;
+}

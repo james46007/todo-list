@@ -1,0 +1,36 @@
+<div class="card shadow">
+  <h3 class="card-header">Todo List</h3>
+  <div class="card-body">
+    <div class="form-inline">
+      <input (change)="filter($event)"
+             type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Buscar tarea">
+      <button routerLink="/add"
+              type="submit" class="btn btn-primary mb-2 float-right ml-2">Agregar
+      </button>
+    </div>
+
+    <ng-template [ngIf]="todoList.length>0" [ngIfElse]="emptyTodoList">
+      <ul class="list-group" *ngFor="let todo of todoList">
+        <app-todo (completedTaks)="completedTaks($event)"
+                  (getAllTaks)="getAllTaks()"
+                  [todoInput]="todo"></app-todo>
+      </ul>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar"
+             [style.width.%]="completed / todoList.length * 100"
+             aria-valuemin="0"
+             aria-valuemax="100">
+          {{completed}} de {{todoList.length}} tarea(s) completada(s)
+        </div>
+      </div>
+
+      <button *ngIf="showNotCompleted" (click)="tasksNotCompleted(false)">
+        Mostrar no completados
+      </button>
+      <button *ngIf="!showNotCompleted" (click)="filter($event)">Mostrar todos</button>
+    </ng-template>
+    <ng-template #emptyTodoList>
+      <p>No tienes tareas registradas</p>
+    </ng-template>
+  </div>
+</div>
